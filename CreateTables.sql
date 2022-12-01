@@ -7,6 +7,12 @@ CREATE TABLE if not exists Bohemia.Region
 	"Country"	varchar not null
 );
 
+CREATE TABLE if not exists Bohemia.Platform
+(
+	"PlatformID" bigserial primary key,
+	"Platform" varchar not null
+);
+
 CREATE TABLE if not exists Bohemia.StudioInformation
 (
 	"StudioInformationID"	bigserial primary key,
