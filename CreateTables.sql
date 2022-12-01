@@ -13,7 +13,11 @@ CREATE TABLE if not exists Bohemia.StudioInformation
 	"Name"	varchar(255)	not null,
 	"Description"	varchar	not null,
 	"Head_Of_Studio_Name"	varchar	not null,
-	"Date_Acquired"	date
+	"Date_Acquired"	date,
+	"Address" varchar not null,
+	"ContactNumber" varchar(10) not null,
+	"AlternativeNumber" varchar(10) not null,
+	"Email" varchar not null check("Email" like '%@%')
 );
 
 CREATE TABLE if not exists Bohemia.Studio
