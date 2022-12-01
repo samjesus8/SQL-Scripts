@@ -29,15 +29,15 @@ CREATE TABLE if not exists Bohemia.StudioInformation
 CREATE TABLE if not exists Bohemia.Studio
 (
 	"StudioID"	bigserial primary key,
-	"StudioInformationID"	bigint	constraint Studio_StudioInformtion_StudioInformationID_FK references StudioInformation,
-	"PlatformID"	bigint	constraint Studio_Platform_PlatformID_FK references Platform
+	"StudioInformationID"	bigint	constraint Studio_StudioInformtion_StudioInformationID_FK references Bohemia.StudioInformation,
+	"PlatformID"	bigint	constraint Studio_Platform_PlatformID_FK references Bohemia.Platform
 );
 
 CREATE TABLE if not exists Bohemia.Project
 (
 	"ProjectID"		bigserial primary key,
-	"StudioID"	bigint constraint Project_Studio_StudioID_FK references Studio,
-	"PlatformID" bigint constraint Project_Platform_PlatformID_FK references Platform,
+	"StudioID"	bigint constraint Project_Studio_StudioID_FK references Bohemia.Studio,
+	"PlatformID" bigint constraint Project_Platform_PlatformID_FK references Bohemia.Platform,
 	"Name"	varchar	not null,
 	"Description"  varchar not null,
 	"Genre" varchar	not null,
@@ -47,14 +47,14 @@ CREATE TABLE if not exists Bohemia.Project
 CREATE TABLE if not exists Bohemia.StudioAssignment
 (
 	"StudioAssignmentID"	bigserial primary key,
-	"StudioID"	bigint constraint StudioAssignment_Studio_StudioID_FK references Studio,
-	"ProjectID"	bigint constraint StudioAssignment_Project_ProjectID_FK references Project
+	"StudioID"	bigint constraint StudioAssignment_Studio_StudioID_FK references Bohemia.Studio,
+	"ProjectID"	bigint constraint StudioAssignment_Project_ProjectID_FK references Bohemia.Project
 );
 
 CREATE TABLE if not exists Bohemia.EmployeeInformation
 (
 	"EmployeeInformationID"	bigserial primary key,
-	"RegionID" bigint constraint EmployeeInformation_Region_RegionID_FK references Region,
+	"RegionID" bigint constraint EmployeeInformation_Region_RegionID_FK references Bohemia.Region,
 	"FirstName" varchar(255) not null,
 	"Lastname" varchar(255) not null,
 	"UserName" varchar(255) not null,
@@ -67,9 +67,9 @@ CREATE TABLE if not exists Bohemia.EmployeeInformation
 CREATE TABLE if not exists Bohemia.Employee
 (
 	"EmployeeID"	bigserial primary key,
-	"EmployeeInfoID"	bigint constraint Employee_EmployeeInfomation_EmployeeInfoID_FK references EmployeeInformation,
-	"StudioID" bigint constraint Employee_Studio_StudioID_FK references Studio,
-	"ProjectID" bigint constraint Employee_Project_ProjectID_FK references Project,
+	"EmployeeInfoID"	bigint constraint Employee_EmployeeInfomation_EmployeeInfoID_FK references Bohemia.EmployeeInformation,
+	"StudioID" bigint constraint Employee_Studio_StudioID_FK references Bohemia.Studio,
+	"ProjectID" bigint constraint Employee_Project_ProjectID_FK references Bohemia.Project,
 	"DateOfEmployment"	date not null,
 	"Status" varchar not null,
 	"TerminationDate" date check(Employee."TerminationDate" > Employee."DateOfEmployment"),
@@ -79,12 +79,12 @@ CREATE TABLE if not exists Bohemia.Employee
 CREATE TABLE if not exists Bohemia.Contract
 (
 	"ContractID" bigserial primary key,
-	"StudioID" bigint constraint Contract_Studio_StudioID_FK references Studio,
-	"EmployeeID" bigint constraint Contract_Employee_EmployeeID_FK references Employee,
+	"StudioID" bigint constraint Contract_Studio_StudioID_FK references Bohemia.Studio,
+	"EmployeeID" bigint constraint Contract_Employee_EmployeeID_FK references Bohemia.Employee,
 	"ContractType" varchar not null,
 	"StartDate" date not null,
 	"EndDate" date check(Contract."EndDate" > Contract."StartDate"),
 	"Duration" varchar not null,
 	"Salary" bigint not null,
-	"CurrentStudioID" bigint constraint Contract_Studio_CurrentStudioID_FK references Studio
+	"CurrentStudioID" bigint constraint Contract_Studio_CurrentStudioID_FK references Bohemia.Studio
 );
