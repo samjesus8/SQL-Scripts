@@ -5,12 +5,26 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{07CC8A72-AF1A-46C9-970C-269146ACD706}"
 	ProjectSection(SolutionItems) = preProject
+		HowToMake.txt = HowToMake.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Creation Scripts", "Creation Scripts", "{07B7CD3F-30CB-40B0-B26A-28605D7C6771}"
+	ProjectSection(SolutionItems) = preProject
 		CreateTables.sql = CreateTables.sql
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Insertion Scripts", "Insertion Scripts", "{71747F20-624F-4EF6-9229-561D134206BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Query Scripts", "Query Scripts", "{21B5F817-8B98-44E0-BDC4-50056525E23C}"
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{07B7CD3F-30CB-40B0-B26A-28605D7C6771} = {07CC8A72-AF1A-46C9-970C-269146ACD706}
+		{71747F20-624F-4EF6-9229-561D134206BF} = {07CC8A72-AF1A-46C9-970C-269146ACD706}
+		{21B5F817-8B98-44E0-BDC4-50056525E23C} = {07CC8A72-AF1A-46C9-970C-269146ACD706}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0AE9BF26-20AB-484D-8B99-BC17809BAFF3}
