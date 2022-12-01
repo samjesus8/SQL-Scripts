@@ -1,0 +1,9 @@
+For people making any SQL Scripts please follow this procedure
+
+If you are making Insertion/Query script:
+
+1. Right Click on the associated folder
+2. Add -> New Item
+3. Click on a Text file and give it a name
+4. Make sure it ends with ".sql" and not ".txt"
+5. Write whatever you need

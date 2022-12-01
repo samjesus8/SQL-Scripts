@@ -14,8 +14,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Creation Scripts", "Creatio
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Insertion Scripts", "Insertion Scripts", "{71747F20-624F-4EF6-9229-561D134206BF}"
+	ProjectSection(SolutionItems) = preProject
+		InsertionScript.sql = InsertionScript.sql
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Query Scripts", "Query Scripts", "{21B5F817-8B98-44E0-BDC4-50056525E23C}"
+	ProjectSection(SolutionItems) = preProject
+		Query1.sql = Query1.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
