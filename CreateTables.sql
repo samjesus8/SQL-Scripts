@@ -4,7 +4,12 @@ CREATE TABLE if not exists Bohemia.Region
 (
 	"RegionID"	bigserial primary key,
 	"City"	varchar	not null,
-	"Country"	varchar not null,
+	"Country"	varchar not null
+);
+
+CREATE TABLE if not exists Bohemia.StudioInformation
+(
+	"StudioInformationID"	bigserial primary key,
 	"Name"	varchar(255)	not null,
 	"Description"	varchar	not null,
 	"Head_Of_Studio_Name"	varchar	not null,
