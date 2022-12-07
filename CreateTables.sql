@@ -36,7 +36,6 @@ CREATE TABLE if not exists Bohemia.Studio
 CREATE TABLE if not exists Bohemia.Project
 (
 	"ProjectID"		bigserial primary key,
-	"StudioID"	bigint constraint Project_Studio_StudioID_FK references Bohemia.Studio,
 	"PlatformID" bigint constraint Project_Platform_PlatformID_FK references Bohemia.Platform,
 	"Name"	varchar	not null,
 	"Description"  varchar not null,
