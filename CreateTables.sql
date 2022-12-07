@@ -67,7 +67,6 @@ CREATE TABLE if not exists Bohemia.Employee
 (
 	"EmployeeID"	bigserial primary key,
 	"EmployeeInfoID"	bigint constraint Employee_EmployeeInfomation_EmployeeInfoID_FK references Bohemia.EmployeeInformation,
-	"StudioID" bigint constraint Employee_Studio_StudioID_FK references Bohemia.Studio,
 	"ProjectID" bigint constraint Employee_Project_ProjectID_FK references Bohemia.Project,
 	"DateOfEmployment"	date not null,
 	"Status" varchar not null,
