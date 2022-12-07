@@ -21,6 +21,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Query Scripts", "Query Scripts", "{21B5F817-8B98-44E0-BDC4-50056525E23C}"
 	ProjectSection(SolutionItems) = preProject
 		Query1.sql = Query1.sql
+		requirement4-2.sql = requirement4-2.sql
 		Requirement4-3.sql = Requirement4-3.sql
 	EndProjectSection
 EndProject
