@@ -7,12 +7,6 @@ CREATE TABLE if not exists Bohemia.Region
 	"Country"	varchar not null
 );
 
-CREATE TABLE if not exists Bohemia.Platform
-(
-	"PlatformID" bigserial primary key,
-	"Platform" varchar not null
-);
-
 CREATE TABLE if not exists Bohemia.StudioInformation
 (
 	"StudioInformationID"	bigserial primary key,
@@ -30,13 +24,13 @@ CREATE TABLE if not exists Bohemia.Studio
 (
 	"StudioID"	bigserial primary key,
 	"StudioInformationID"	bigint	constraint Studio_StudioInformtion_StudioInformationID_FK references Bohemia.StudioInformation,
-	"PlatformID"	bigint	constraint Studio_Platform_PlatformID_FK references Bohemia.Platform
+	"Platform" varchar not nul
 );
 
 CREATE TABLE if not exists Bohemia.Project
 (
 	"ProjectID"		bigserial primary key,
-	"PlatformID" bigint constraint Project_Platform_PlatformID_FK references Bohemia.Platform,
+	"PlatformID" varchar not null,
 	"Name"	varchar	not null,
 	"Description"  varchar not null,
 	"Genre" varchar	not null,
@@ -85,4 +79,11 @@ CREATE TABLE if not exists Bohemia.Contract
 	"Duration" varchar not null,
 	"Salary" bigint not null,
 	"CurrentStudioID" bigint constraint Contract_Studio_CurrentStudioID_FK references Bohemia.Studio
+);
+
+CREATE TABLE if not exists Bohemia.PastProject
+(
+	"PastProjectID" bigserial primary key,
+	"EmployeeID" bigint constraint PastProject_Employee_EmployeeID_FK references Bohemia.Employee,
+	"ProjectID" bigint constraint PastProject_Project_ProjectID_FK references Bohemia.Project
 );
