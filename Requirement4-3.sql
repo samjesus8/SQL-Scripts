@@ -1,4 +1,4 @@
-#Not Working yet, cant test without test data.
+#Working
 
 SELECT p."ProjectID", p."Name", s."Name", p."Status" 
 FROM bohemia.studioinformation s
