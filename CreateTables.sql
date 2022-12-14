@@ -15,8 +15,8 @@ CREATE TABLE if not exists Bohemia.StudioInformation
 	"Head_Of_Studio_Name"	varchar	not null,
 	"Date_Acquired"	date,
 	"Address" varchar not null,
-	"ContactNumber" varchar(10) not null,
-	"AlternativeNumber" varchar(10) not null,
+	"ContactNumber" varchar(13) not null,
+	"AlternativeNumber" varchar(13) not null,
 	"Email" varchar not null check("Email" like '%@%')
 );
 
@@ -24,13 +24,13 @@ CREATE TABLE if not exists Bohemia.Studio
 (
 	"StudioID"	bigserial primary key,
 	"StudioInformationID"	bigint	constraint Studio_StudioInformtion_StudioInformationID_FK references Bohemia.StudioInformation,
-	"Platform" varchar not nul
+	"Platform" varchar not null
 );
 
 CREATE TABLE if not exists Bohemia.Project
 (
 	"ProjectID"		bigserial primary key,
-	"PlatformID" varchar not null,
+	"Platform" varchar not null,
 	"Name"	varchar	not null,
 	"Description"  varchar not null,
 	"Genre" varchar	not null,
@@ -52,7 +52,7 @@ CREATE TABLE if not exists Bohemia.EmployeeInformation
 	"Lastname" varchar(255) not null,
 	"UserName" varchar(255) not null,
 	"Email" varchar not null check("Email" like '%@%'),
-	"ContactNumber" varchar(10) not null,
+	"ContactNumber" varchar(13) not null,
 	"Postcode" varchar not null,
 	"AddressLine1" varchar not null
 );
@@ -65,7 +65,7 @@ CREATE TABLE if not exists Bohemia.Employee
 	"DateOfEmployment"	date not null,
 	"Status" varchar not null,
 	"TerminationDate" date check(Employee."TerminationDate" > Employee."DateOfEmployment"),
-	"Title" varchar not null
+	"Title" varchar,
 );
 
 CREATE TABLE if not exists Bohemia.Contract
