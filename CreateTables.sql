@@ -65,7 +65,7 @@ CREATE TABLE if not exists Bohemia.Employee
 	"DateOfEmployment"	date not null,
 	"Status" varchar not null,
 	"TerminationDate" date check(Employee."TerminationDate" > Employee."DateOfEmployment"),
-	"Title" varchar,
+	"Title" varchar
 );
 
 CREATE TABLE if not exists Bohemia.Contract
