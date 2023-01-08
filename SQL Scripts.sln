@@ -20,11 +20,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Insertion Scripts", "Insert
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Query Scripts", "Query Scripts", "{21B5F817-8B98-44E0-BDC4-50056525E23C}"
 	ProjectSection(SolutionItems) = preProject
-		Query1.sql = Query1.sql
 		Requirement4-1.sql = Requirement4-1.sql
 		requirement4-2.sql = requirement4-2.sql
 		Requirement4-3.sql = Requirement4-3.sql
 		Requirement4-5.sql = Requirement4-5.sql
+		Requirement4-4.sql = Requirement4-4.sql
 	EndProjectSection
 EndProject
 Global
